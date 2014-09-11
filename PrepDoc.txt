@@ -8,4 +8,4 @@ Preparation
 2e)	The LDR instruction loads the value of a specified register into the specified address, while the STR instruction stores the value of a specified address into the specified register. 
 2f)	
 2g)
-3)
+3) These are added to RxFifo_Init to ensure that all previous interrupts are disabled till the completion of RxFifo_Init. 
