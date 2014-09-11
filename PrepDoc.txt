@@ -1,8 +1,11 @@
 Lab 2
 Preparation
-a)	The datapt parameter is passed as a pointer to a memory location. It is an input parameter. It is call by reference. At the time of the call, datapt is located at 0x0A38?? (not sure)
-b)	Adsflkj
-c)	MOV instruction only copies the contents of one register to another while affecting no flags. The MOVS instruction additionally causes the result flags to be set. 
-d)	LDR instruction loads and stores the value of the specified register into the specified address. Meanwhile, LDRB deals with only a single byte. Therefore the three unused bytes are zeroed upon loading. 
-e)	The LDR instruction loads the value of a specified register into the specified address, while the STR instruction stores the value of a specified address into the specified register. 
-f)	
+1)
+2a)	The datapt parameter is passed as a pointer to a memory location. It is an input parameter. It is call by reference. At the time of the call, datapt is located at 0x0A38?? (not sure)
+2b)	DO this
+2c)	MOV instruction only copies the contents of one register to another while affecting no flags. The MOVS instruction additionally causes the result flags to be set. 
+2d)	LDR instruction loads and stores the value of the specified register into the specified address. Meanwhile, LDRB deals with only a single byte. Therefore the three unused bytes are zeroed upon loading. 
+2e)	The LDR instruction loads the value of a specified register into the specified address, while the STR instruction stores the value of a specified address into the specified register. 
+2f)	
+2g)
+3)
