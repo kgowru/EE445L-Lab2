@@ -1,11 +1,13 @@
-Lab 2
+Lab 2 Matthew Normyle and Kapil Gowru
 Preparation
-1)
+1)	Memory locations 0x20000055 and 0x20000050 respectively. Both are in RAM.
 
 2)
-a)	The datapt parameter is passed as a pointer to a memory location. It is an output parameter. It is call by reference. At the time of the call, datapt is located
+a)	The datapt parameter is passed as a pointer to a memory location. It is an output parameter. 
+	It is call by reference. At the time of the call, datapt is located
 	in the heap?
-b)	*********. Little endian. *****. ******.
+b)	0x00000A34 contains the LSLS instruction. It contains the opcode and various registers.
+	Little endian. After the first LDR, R0 contains 2000. After the second LDR, R0 contains 2000.
 c)	MOV instruction only copies the contents of one register to another while affecting no flags. 
 	The MOVS instruction additionally causes the result flags to be set. 
 d)	LDR instruction loads and stores the value of the specified register into the specified address. Meanwhile, 
@@ -15,9 +17,9 @@ e)	The LDR instruction loads the value of a specified register into the specifie
 f)	BX LR returns from a subroutine. The previous PC is stored in the LR.
 g)	The return value is stored in R0.
 
-3)	StartCritical and EndCritical are added to RxFifo_Init because this initialization needs to be atomic. If it wasn't, you run the risk of something attempting
-	to access a Fifo that is only partially initialized.
-	Interrupts are enabled because they were enabled in the main function that called RxFifo_Init(). Since the EndCritical function returns the previous value of
-	the I bit.
+3)	StartCritical and EndCritical are added to RxFifo_Init because this initialization needs to be atomic. If it wasn't, 
+	you run the risk of something attempting to access a Fifo that is only partially initialized.
+	Interrupts are enabled because they were enabled in the main function that called RxFifo_Init(). 
+	Since the EndCritical function returns the previous value of the I bit.
 
 4) 	15-18 cycles. 16/(80,000,000). About .2 microseconds.
