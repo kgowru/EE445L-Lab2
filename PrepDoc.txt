@@ -1,11 +1,23 @@
 Lab 2
 Preparation
 1)
-2a)	The datapt parameter is passed as a pointer to a memory location. It is an input parameter. It is call by reference. At the time of the call, datapt is located at 0x0A38?? (not sure)
-2b)	DO this
-2c)	MOV instruction only copies the contents of one register to another while affecting no flags. The MOVS instruction additionally causes the result flags to be set. 
-2d)	LDR instruction loads and stores the value of the specified register into the specified address. Meanwhile, LDRB deals with only a single byte. Therefore the three unused bytes are zeroed upon loading. 
-2e)	The LDR instruction loads the value of a specified register into the specified address, while the STR instruction stores the value of a specified address into the specified register. 
-2f)	
-2g)
-3) These are added to RxFifo_Init to ensure that all previous interrupts are disabled till the completion of RxFifo_Init. 
+
+2)
+a)	The datapt parameter is passed as a pointer to a memory location. It is an output parameter. It is call by reference. At the time of the call, datapt is located
+	in the heap?
+b)	*********. Little endian. *****. ******.
+c)	MOV instruction only copies the contents of one register to another while affecting no flags. 
+	The MOVS instruction additionally causes the result flags to be set. 
+d)	LDR instruction loads and stores the value of the specified register into the specified address. Meanwhile, 
+	LDRB deals with only a single byte. Therefore the three unused bytes are zeroed upon loading. 
+e)	The LDR instruction loads the value of a specified register into the specified address, 
+	while the STR instruction stores the value of a specified address into the specified register. 
+f)	BX LR returns from a subroutine. The previous PC is stored in the LR.
+g)	The return value is stored in R0.
+
+3)	StartCritical and EndCritical are added to RxFifo_Init because this initialization needs to be atomic. If it wasn't, you run the risk of something attempting
+	to access a Fifo that is only partially initialized.
+	Interrupts are enabled because they were enabled in the main function that called RxFifo_Init(). Since the EndCritical function returns the previous value of
+	the I bit.
+
+4) 	15-18 cycles. 16/(80,000,000). About .2 microseconds.
